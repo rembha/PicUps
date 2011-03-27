@@ -1,0 +1,49 @@
+<% form_tag :url => {:controller => "pic_ups",:action=>'edit'} do%>
+<h1>Envío de Informes</h1>
+<ul>
+  <li>Diario</li>
+  <li>Semanal</li>
+  <li>Mensual</li>
+</ul>
+
+<div id="week" style="display:none">
+  Día de la Semana:
+  <%= text_field "num_day",'',:size => 1%>
+</div>
+
+<div id="mounth" style="display:none">
+Día del mes:
+  <%= text_field "day",'',:size => 2%>
+</div>
+
+<hr />
+<h1>Registro de Horario Semanal</h1>
+<table>
+  <tr>
+   <th>Lunes</th>
+   <th>Martes</th>
+   <th>Miercoles</th>
+   <th>Jueves</th>
+   <th>Viernes</th>
+   <th>Sabado</th>
+   <th>Domingo</th>
+  </tr>
+  <tr>
+    <td><%=text_field 'day_1','',:size => 2%></td>
+    <td><%=text_field 'day_1','',:size => 2%></td>
+    <td><%=text_field 'day_1','',:size => 2%></td>
+    <td><%=text_field 'day_1','',:size => 2%></td>
+    <td><%=text_field 'day_1','',:size => 2%></td>
+    <td><%=text_field 'day_1','',:size => 2%></td>
+    <td><%=text_field 'day_1','',:size => 2%></td>
+  </tr>
+</table>
+
+<hr />
+
+<%= text_area "description",:size =>"20x20" %>
+
+<hr />
+
+<%= submit_tag "Guardar"%>
+<%end%>

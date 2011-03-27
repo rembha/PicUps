@@ -1,0 +1,15 @@
+<h2>My PicUps:</h2>
+
+<ul>
+<li><%= link_to_remote 'Last Week',:controller => 'pic_ups',:action => 'update_times_pics',:period => '7'%></li>
+<li><%= link_to_remote '2 Weeks',:controller => 'pic_ups',:action => 'update_times_pics',:period => '14'%></li>
+<li><%= link_to_remote '3 Weeks',:controller => 'pic_ups',:action => 'update_times_pics',:period => '31'%></li>
+<li>
+  <% form_remote_tag :url => {:controller => 'pic_ups', :action => 'update_times_pics'} do %>
+    <% text_field :period, :value => '' %> days
+    <% submit_tag 'Consultar'%>
+  <% end %>
+</li>
+</ul>
+
+<%= render :partial => "pic_ups/statistics",:locals =>{:mode => 'table'}%>

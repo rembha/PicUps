@@ -1,1 +1,7 @@
 <h2>PicUps: <%= @project.name %></h2>
+
+<%if @project_picups.nil? %>
+  <%= render :partial => 'pic_ups/edit'%>
+<%else%>
+  <%= render :partial => 'pic_ups/show'%>
+<%end%>

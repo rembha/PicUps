@@ -1,0 +1,30 @@
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Tareas</th>
+    <th>Por justificar</th>
+    <th>Justificado</th>
+    <th>Sin de justificar</th>
+  </tr>
+  <% @my_pics.each do |pic|%>
+  <tr>
+    <td><%= pic.day %></td>
+    <% unless pic[:issues].empty?%>
+    <td>
+      <ul>
+        <%pic[:issues].each do |issue|%>
+        <li><%= issue %></li>
+        <%end%>
+      </ul>
+    </td>
+    <% else %>
+    <td> Nothing registed. </td>
+    <% end %>
+    <td><%= pic[:time_to_justify}.to_s %></td>
+    <td><%= pic[:time_justify].to_s%></td>
+    <td><%= pic[:time_not_justify].to_s%></td>
+  </tr>
+  <%end%>
+</table>
+
+<%= link_to_remote 'Modo Grafico',:controller => 'pic_ups',:action => 'update_times_pics',:mode => 'graphic'%>

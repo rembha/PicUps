@@ -6,6 +6,13 @@ class CreatePicUps < ActiveRecord::Migration
       t.column "activated", :boolean, :default => false, :null => false
       t.column "day",:integer, :default => 0, :null => false
       t.column "num_day",:integer, :default => 0, :null => false
+      t.column "day_1",:integer, :default => 0, :null => false
+      t.column "day_2",:integer, :default => 0, :null => false
+      t.column "day_3",:integer, :default => 0, :null => false
+      t.column "day_4",:integer, :default => 0, :null => false
+      t.column "day_5",:integer, :default => 0, :null => false
+      t.column "day_6",:integer, :default => 0, :null => false
+      t.column "day_7",:integer, :default => 0, :null => false
       t.column "description",:text
     end
   end
