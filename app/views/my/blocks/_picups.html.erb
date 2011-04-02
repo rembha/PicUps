@@ -1,0 +1,7 @@
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'style', :plugin => 'redmine_pic_ups' %>
+  <%= javascript_include_tag 'piclog', :plugin => 'redmine_pic_ups' %>
+<% end %>
+
+<%= render :partial => 'pic_ups/my_pics' %>
+

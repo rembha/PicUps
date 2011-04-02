@@ -1,3 +1,4 @@
+<%if @my_pics.respond_to?(:each)%>
 <table>
   <tr>
     <th>Date</th>
@@ -7,7 +8,7 @@
     <th>Sin de justificar</th>
   </tr>
   <% @my_pics.each do |pic|%>
-  <tr>
+  <tr><%debugger%>
     <td><%= pic.day %></td>
     <% unless pic[:issues].empty?%>
     <td>
@@ -20,11 +21,11 @@
     <% else %>
     <td> Nothing registed. </td>
     <% end %>
-    <td><%= pic[:time_to_justify}.to_s %></td>
+    <td><%= pic[:time_to_justify].to_s %></td>
     <td><%= pic[:time_justify].to_s%></td>
     <td><%= pic[:time_not_justify].to_s%></td>
   </tr>
   <%end%>
 </table>
-
+<%end%>
 <%= link_to_remote 'Modo Grafico',:controller => 'pic_ups',:action => 'update_times_pics',:mode => 'graphic'%>

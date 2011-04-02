@@ -1,0 +1,13 @@
+<table>
+<tr>
+  <th>Tareas</th>
+  <th>Usuarios</th>
+  <th>Tiempo</th>
+  <th>Fecha</th>
+</tr>
+<% if @pics.respond_to?(:each)%>
+  <%@pics.each do |pic|%>
+    <%= show_pic(pic)%>
+  <%end%>
+<%end%>
+</table>
