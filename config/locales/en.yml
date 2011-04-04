@@ -1,3 +1,21 @@
 # English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  Monday: Monday
+  Tuesday: Tuesday
+  Wendsday: Wendsday
+  Thursday: Thursday
+  Friday: Friday
+  Saturday: Saturday
+  Sunday: Sunday
+  january: January
+  febrary: Febrary
+  march: March
+  april: April
+  may: May
+  june: June
+  july: July
+  august: August
+  september: September
+  october: October
+  november: November
+  decemver: December

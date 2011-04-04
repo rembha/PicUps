@@ -2,4 +2,13 @@
   <li>Per&iacute;odo de env&iacute;o de informes: <%= period_send_inform(@project_picups) %></li>
 </ul>
 
-<%= render :partial => "pic_ups/resume_project" %>
+<% form_remote_tag :url =>{:controller => 'pic_ups',:action=>'select_month',:project_id => @project.id} do %>
+
+  <%=  select("month", "select", select_month_in_year, {:include_blank => true})%>
+
+  <%= submit_tag "Enviar"  %>
+<%end%>
+
+<div id="resume_project">
+  <%= render :partial => "pic_ups/resume_project" %>
+</div>

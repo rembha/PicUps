@@ -1,0 +1,21 @@
+# English strings go here for Rails i18n
+en:
+  Monday: Lunes
+  Tuesday: Martes
+  Wendsday: Miércoles
+  Thursday: Jueves
+  Friday: Viernes
+  Saturday: Sábado
+  Sunday: Domingo
+  january: Enero
+  febrary: Febrero
+  march: Marzo
+  april: Abril
+  may: Mayo
+  june: Junio
+  july: Julio
+  august: Agosto
+  september: Septiembre
+  october: Octubre
+  november: Noviembre
+  decemver: Diciembre

@@ -1,20 +1,40 @@
 class PicUpsController < ApplicationController
   unloadable
   def index
-    @project = Project.find_by_identifier params[:project_id]
-    @project_picups = (PicUp.find_by_id 1) || nil
+    @project = Project.find_by_identifier 'phoras'
+    @project_picups = (PicUp.find_by_id 5) || nil
 
     unless @project_picups.nil?
       @pics = TimeEntry.find :all,:conditions => {:project_id => @project.id,:tmonth => Time.now.month}
+      @hours = TimeEntry.sum :hours,:conditions => {:project_id => @project.id,:tmonth => Time.now.month}
     end
 
     @identifier = params[:project_id]
 
   end
 
-  def editTi
+  def select_month
+
+    unless params[:month].nil?
+      month = params[:month]["select"]
+    else
+      month = Time.now.month
+    end
+
+    @pics = TimeEntry.find :all,:conditions => {:project_id => params[:project_id],:tmonth => month.to_i}
+    @hours = TimeEntry.sum :hours,:conditions => {:project_id => params[:project_id],:tmonth => month.to_i}
+
+    render :update do |page|
+      page.replace_html "resume_project", :partial => "pic_ups/resume_project", :locals => {:pics => @pics}
+    end
+
+  end
+
+  def edit
 
     project = PicUp.new
+
+    project[:project_id] = "cualquiera"
 
     if params[:send]["inform"] == 'week'
      project[:day] = params[:week]
@@ -22,13 +42,13 @@ class PicUpsController < ApplicationController
      project[:nday] = params[:mounth]
     end
 
-    project[:day_1] = params[:day_1] || 0
-    project[:day_2] = params[:day_2] || 0
-    project[:day_3] = params[:day_3] || 0
-    project[:day_4] = params[:day_4] || 0
-    project[:day_5] = params[:day_5] || 0
-    project[:day_6] = params[:day_6] || 0
-    project[:day_7] = params[:day_7] || 0
+    project[:day_1] = params[:day]["1"] || 0
+    project[:day_2] = params[:day]["2"] || 0
+    project[:day_3] = params[:day]["3"] || 0
+    project[:day_4] = params[:day]["4"] || 0
+    project[:day_5] = params[:day]["5"] || 0
+    project[:day_6] = params[:day]["6"] || 0
+    project[:day_7] = params[:day]["7"] || 0
 
     project[:description] = params[:desciption] || nil
 

@@ -8,12 +8,12 @@
 
 <div id="week" style="display:none">
   Día de la Semana:
-  <%= text_field "num_day",'',:size => 1,:maxlength=>1%>
+  <%= text_field "num_day",:size => 1,:maxlength=>1%>
 </div>
 
 <div id="mounth" style="display:none">
 Día del mes:
-  <%= text_field "day",'',:size => 2,:maxlength=>2%>
+  <%= text_field "wday",'',:size => 2,:maxlength=>2%>
 </div>
 
 <hr />
@@ -29,13 +29,13 @@ Día del mes:
    <th>Domingo</th>
   </tr>
   <tr>
-    <td><%=text_field 'day_1','',:size => 2,:maxlength=>2%>horas</td>
-    <td><%=text_field 'day_2','',:size => 2,:maxlength=>2%>horas</td>
-    <td><%=text_field 'day_3','',:size => 2,:maxlength=>2%>horas</td>
-    <td><%=text_field 'day_4','',:size => 2,:maxlength=>2%>horas</td>
-    <td><%=text_field 'day_5','',:size => 2,:maxlength=>2%>horas</td>
-    <td><%=text_field 'day_6','',:size => 2,:maxlength=>2%>horas</td>
-    <td><%=text_field 'day_7','',:size => 2,:maxlength=>2%>horas</td>
+    <td><%=text_field 'day','1',:size => 2,:maxlength=>2%>horas</td>
+    <td><%=text_field 'day','2',:size => 2,:maxlength=>2%>horas</td>
+    <td><%=text_field 'day','3',:size => 2,:maxlength=>2%>horas</td>
+    <td><%=text_field 'day','4',:size => 2,:maxlength=>2%>horas</td>
+    <td><%=text_field 'day','5',:size => 2,:maxlength=>2%>horas</td>
+    <td><%=text_field 'day','6',:size => 2,:maxlength=>2%>horas</td>
+    <td><%=text_field 'day','7',:size => 2,:maxlength=>2%>horas</td>
   </tr>
 </table>
 
