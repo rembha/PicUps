@@ -16,14 +16,14 @@ task :default_times_pics => :environment do
 
           time.project_id = project.id
           time.issue_id = issue.id
-          time.user_id = rand(100)
+          time.user_id = rand(100)+1
           time.hours = rand(8).to_f
-          month = rand(Time.now.month)
-          day = rand(Time.now.day)
+          month = rand(Time.now.month)+1
+          day = rand(Time.now.day)+1
           time.spent_on = Time.at(Time.now.to_i-(86400*day*month))
           time.tyear = Time.now.year
           time.tmonth = month
-          time.activity_id = rand(2)+7
+          time.activity_id = rand(2)+8
           time.tweek = time.spent_on.strftime("%U")
 
 
